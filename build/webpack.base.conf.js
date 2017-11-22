@@ -64,10 +64,7 @@ module.exports = {
       use: ExtractTextPlugin.extract({
         fallback: 'vue-style-loader',
         use: [{
-          loader: 'css-loader?minimize',
-          options: {
-            modules: true
-          }
+          loader: 'css-loader?minimize'
         }]
       })
     }, {

@@ -1,4 +1,5 @@
 'use strict'
+const fs = require('fs')
 const webpack = require('webpack')
 const config = require('./config')
 const merge = require('webpack-merge')
@@ -16,6 +17,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     host: process.env.HOST || config.dev.host,
     port: process.env.PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
+    proxy: config.dev.proxy,
     publicPath: config.dev.assetsPublicPath,
     quiet: false,
     watchOptions: {

@@ -1,7 +1,7 @@
 <template>
   <div id="login" class="login">
     <div class="login-intro">
-      <img src="https://iget365.yigefanqie.com/img/logo.png">
+      <img src="../../img/logo.png">
       <h1>iget365</h1>
       <h2>存储，同步、分享你喜欢的内容</h2>
     </div>
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-  import SignIn from '../component/SignIn.vue'
-  import SignUp from '../component/SignUp.vue'
+  import SignIn from '../component/SignIn'
+  import SignUp from '../component/SignUp'
 
   export default {
     name: 'login',
@@ -34,7 +34,13 @@
       }
     },
     created () {
-      this.currTabItemName = this.$route.name || 'signIn'
+    },
+    beforeUpdate () {
+      const routeName = this.$route.name
+
+      if (routeName !== this.currTabItemName) {
+        this.currTabItemName = routeName
+      }
     }
   }
 </script>
@@ -50,8 +56,8 @@ body {
 }
 .login {
   box-sizing: border-box;
-  width: 400px;
-  margin: 20px auto;
+  width: 420px;
+  margin: 50px auto 0;
   padding: 20px 30px;
   border: 1px solid #E4E4E4;
   border-top: 1px solid #409EFF;
@@ -60,23 +66,23 @@ body {
 }
 .login-intro {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .login-intro img {
-  width: 88px;
+  width: 66px;
 }
 .login-intro h1, .login-intro h2 {
   font-weight: normal;
 }
 .login-intro h1 {
-  font-size: 40px;
+  font-size: 30px;
   color: #353535;
   margin-top: 10px;
 }
 .login-intro h2 {
   font-size: 16px;
   color: #888;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 </style>

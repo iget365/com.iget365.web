@@ -7,6 +7,15 @@ module.exports = {
     port: 9999,
     disableHostCheck: true,
     autoOpenBrowser: false,
+    proxy: {
+      '/api': {
+        target: 'https://127.0.0.1',
+        // ignorePath: true,
+        prependPath: true,
+        changeOrigin: true,
+        secure: false
+      }
+    },
     devtool: 'eval-source-map',
     assetsPublicPath: '',
     html: {

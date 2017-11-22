@@ -10,6 +10,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm" v-loading.lock="loading">登录</el-button>
+        <el-button plain @click="gotoSignUp">去注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -96,6 +97,7 @@ export default {
       })
     },
     gotoSignUp () {
+      this.$router.push({'name': 'signUp'})
     }
   }
 }

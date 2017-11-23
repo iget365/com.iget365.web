@@ -8,5 +8,24 @@ export default {
     } else {
       return null
     }
+  },
+  parseObj2Text (obj = {}) {
+    let txt = ''
+
+    Object.keys(obj).forEach(key => {
+      txt += obj[key] + '\n'
+    })
+
+    return txt
+  },
+  parseUpdateUrlAndMethod (id = '', url) {
+    let method = 'post'
+
+    if (id) {
+      method = 'patch'
+      url += '/' + id
+    }
+
+    return { method, url }
   }
 }

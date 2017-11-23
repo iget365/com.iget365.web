@@ -1,6 +1,5 @@
 <template>
   <div id="LinkDetail" class="link-detail">
-    link
   </div>
 </template>
 

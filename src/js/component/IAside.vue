@@ -18,7 +18,7 @@
     data () {
       const data = {
         list: [
-          { text: '全部', path: '/all' },
+          // { text: '全部', path: '/all' },
           { text: '链接', path: '/links' },
           { text: '文字', path: '/texts' },
           { text: '图像', path: '/images' },

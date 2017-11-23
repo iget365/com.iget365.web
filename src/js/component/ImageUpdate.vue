@@ -1,7 +1,7 @@
 <template>
-  <div id="All" class="all">
+  <div id="ImageUpdate" class="form image-update">
     <el-alert
-      title="暂不支持全部，代码正在开发中..."
+      title="暂不支持图片类型，代码正在开发中..."
       type="error"
       center
       :closable="false">
@@ -11,11 +11,11 @@
 
 <script>
 export default {
-  name: 'All'
+  name: 'ImageUpdate'
 }
 </script>
 
 <style scoped>
-  .all {
+  .image-update {
   }
 </style>

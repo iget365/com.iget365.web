@@ -4,7 +4,7 @@
     <div class="container content">
       <IAside></IAside>
       <div class="main">
-        <router-view class="router-view" />
+        <router-view class="section" />
         <IFooter></IFooter>
       </div>
     </div>
@@ -49,7 +49,32 @@ body {
   margin-left: 185px;
   padding: 0 10px;
 }
-.router-view {
+.section {
   margin: 10px 0;
+}
+.section-bar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E4E4E4;
+  line-height: 2;
+  padding-bottom: 3px;
+  font-size: 17px;
+}
+.section.form .section-bar {
+  margin-bottom: 30px;
+}
+.section.form .el-form {
+  width: 98%;
+}
+.section-bar-title {
+  color: #444;
+  margin-left: 10px;
+}
+.section-bar-action {
+  font-size: 17px;
+}
+.section-bar-action-btn {
+  padding: 3px 5px;
+  margin: 0 3px;
 }
 </style>

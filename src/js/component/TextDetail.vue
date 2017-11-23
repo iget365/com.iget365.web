@@ -1,6 +1,5 @@
 <template>
   <div id="TextDetail" class="text-detail">
-    text
   </div>
 </template>
 

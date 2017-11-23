@@ -60,7 +60,7 @@ export default {
 
           try {
             this.loading = true
-            const session = await this.$http.post('/api/sessions', json)
+            const session = await this.$http.post('/api/public/sessions', json)
             this.loading = false
 
             msg = '登陆成功，页面正在跳转中...'

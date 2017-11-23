@@ -33,7 +33,7 @@ export default {
       if (!validation.phone.test(value)) {
         callback(new Error('请输入有效格式的手机号'))
       } else {
-        const user = await this.$http.get('/api/phones/' + value)
+        const user = await this.$http.get('/api/public/phones/' + value)
 
         if (user.phone) {
           callback(new Error('该手机号已经被占用'))
@@ -86,7 +86,7 @@ export default {
 
           try {
             this.loading = true
-            await this.$http.post('/api/users', json)
+            await this.$http.post('/api/public/users', json)
             this.loading = false
 
             msg = '注册成功，页面正在跳转中...'

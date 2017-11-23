@@ -29,27 +29,22 @@
       }
     },
     methods: {
-      tabItemClick (tab, e) {
+      tabItemClick () {
         this.$router.push({'name': this.currTabItemName})
       }
     },
-    created () {
-    },
-    beforeUpdate () {
-      const routeName = this.$route.name
-
-      if (routeName !== this.currTabItemName) {
-        this.currTabItemName = routeName
+    watch: { // todo go along with v-link, then delete watch $route & created
+      '$route' (to, from) {
+        this.currTabItemName = to.name
       }
+    },
+    created () {
+      this.currTabItemName = this.$route.name
     }
   }
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
 body {
   background-color: #F2F2F2;
   font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;

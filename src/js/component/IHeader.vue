@@ -63,7 +63,7 @@ export default {
 
       if (token) {
         try {
-          await this.$http.del('/api/public/sessions/' + token)
+          await this.$http.del(`/api/public/sessions/${token}`)
           resetToken()
         } catch (err) {
           resetToken()
@@ -85,7 +85,7 @@ export default {
     background-color: #FFF;
     margin-bottom: 15px;
     color: #353535;
-    border-bottom: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E6EBF5;
   }
   .header-wrap {
     display: flex;

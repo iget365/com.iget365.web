@@ -1,8 +1,16 @@
 import axios from 'axios'
 
-async function ajax (method, url, data) {
+async function ajax (method, url, data, header) {
   const token = localStorage.getItem('iget365token')
   let headers = null
+
+  if (method === 'HEAD' || method === 'GET' || method === 'DELETE') {
+    headers = data
+  } else if (method === 'POST' || method === 'PATCH' || method === 'PUT') {
+    headers = header
+  }
+
+  headers = headers || {}
 
   if (url.indexOf('/public') === -1) {
     if (!token) {
@@ -11,9 +19,7 @@ async function ajax (method, url, data) {
       return
     }
 
-    headers = {
-      'x-token': token
-    }
+    headers['x-token'] = token
   }
 
   return new Promise((resolve, reject) => {
@@ -32,22 +38,22 @@ async function ajax (method, url, data) {
 }
 
 export default {
-  async head (url) {
-    return ajax('GET', url)
+  async head (url, header) {
+    return ajax('HEAD', url, header)
   },
-  async get (url) {
-    return ajax('GET', url)
+  async get (url, header) {
+    return ajax('GET', url, header)
   },
-  async post (url, data) {
-    return ajax('POST', url, data)
+  async post (url, data, header) {
+    return ajax('POST', url, data, header)
   },
-  async patch (url, data) {
-    return ajax('PATCH', url, data)
+  async patch (url, data, header) {
+    return ajax('PATCH', url, data, header)
   },
-  async put (url, data) {
-    return ajax('PUT', url, data)
+  async put (url, data, header) {
+    return ajax('PUT', url, data, header)
   },
-  async del (url) {
-    return ajax('DELETE', url)
+  async del (url, header) {
+    return ajax('DELETE', url, header)
   }
 }

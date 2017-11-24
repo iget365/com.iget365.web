@@ -15,7 +15,7 @@ export default {
     text-align: center;
     color: #5A5E66;
     font-size: 13px;
-    border-top: 1px solid #E4E4E4;
+    border-top: 1px solid #E6EBF5;
     padding: 15px 0;
   }
 </style>

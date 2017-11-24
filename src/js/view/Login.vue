@@ -56,7 +56,7 @@ body {
   width: 420px;
   margin: 50px auto 0;
   padding: 20px 30px;
-  border: 1px solid #E4E4E4;
+  border: 1px solid #E6EBF5;
   border-top: 1px solid #409EFF;
   background: #FFF;
   border-radius: 2px;

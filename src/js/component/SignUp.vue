@@ -33,7 +33,7 @@ export default {
       if (!validation.phone.test(value)) {
         callback(new Error('请输入有效格式的手机号'))
       } else {
-        const user = await this.$http.get('/api/public/phones/' + value)
+        const user = await this.$http.get(`/api/public/phones/${value}`)
 
         if (user.phone) {
           callback(new Error('该手机号已经被占用'))

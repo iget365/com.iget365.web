@@ -4,11 +4,11 @@
       <h2 class="section-bar-title">{{ '链接' | updateTitle(id) }} </h2>
     </div>
     <el-form :model="form" status-icon :rules="rule" ref="form" label-width="80px" size="mini">
-      <el-form-item label="标题" prop="title">
-        <el-input type="text" v-model="form.title" auto-complete="off" style="width: 66%;"></el-input>
-      </el-form-item>
       <el-form-item label="链接" prop="url">
         <el-input type="text" v-model="form.url" auto-complete="off" style="width: 98%"></el-input>
+      </el-form-item>
+      <el-form-item label="标题" prop="title">
+        <el-input type="text" v-model="form.title" auto-complete="off" style="width: 66%;"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm" v-loading.lock="loading">提交</el-button>
@@ -57,6 +57,8 @@ export default {
   },
   created () {
     this.id = +this.$route.params.id
+
+    form.getById(this, 'links', this.id)
   }
 }
 </script>

@@ -50,6 +50,8 @@ export default {
   },
   created () {
     this.id = +this.$route.params.id
+
+    form.getById(this, 'texts', this.id)
   }
 }
 </script>

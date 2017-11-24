@@ -55,7 +55,7 @@ body {
 .section-bar {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E6EBF5;
   line-height: 2;
   padding-bottom: 3px;
   font-size: 17px;
@@ -76,5 +76,25 @@ body {
 .section-bar-action-btn {
   padding: 3px 5px;
   margin: 0 3px;
+}
+.section.detail .detail-item {
+  display: flex;
+  color: #444;
+  margin: 15px 0;
+  font-size: 14px;
+}
+.section.detail .detail-item-title {
+  width: 100px;
+  text-align: right;
+  margin-right: 20px;
+}
+.section.detail .detail-item-content {
+  line-height: 1.5;
+  flex: 1;
+}
+.section.detail .detail-item-action {
+  border-top: 1px solid #E6EBF5;
+  margin: 20px 0;
+  padding: 20px 0 0 10px;
 }
 </style>

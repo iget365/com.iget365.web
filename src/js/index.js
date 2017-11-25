@@ -8,6 +8,7 @@ import '../font/css/font-awesome.min.css'
 import '../css/reset.css'
 import '../css/lib/element-ui.css'
 
+// Vue.config.productionTip = false
 Vue.prototype.$http = ajax
 Vue.use(ElementUI, { size: 'small' })
 

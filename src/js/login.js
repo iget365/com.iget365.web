@@ -6,6 +6,7 @@ import ajax from './common/ajax'
 import '../css/reset.css'
 import '../css/lib/element-ui.css'
 
+// Vue.config.productionTip = false
 Vue.prototype.$http = ajax
 Vue.use(ElementUI, { size: 'small' })
 

@@ -4,7 +4,7 @@ const config = require('./config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const env = {
-  NODE_ENV: process.env.NODE_ENV || config.build.NODE_ENV
+  NODE_ENV: JSON.stringify(process.env.NODE_ENV || config.build.NODE_ENV)
 }
 
 const webpackConfig = merge(baseWebpackConfig, {

@@ -2,7 +2,7 @@
 
 module.exports = {
   dev: {
-    NODE_ENV: '"development"',
+    NODE_ENV: 'development',
     host: '0.0.0.0',
     port: 9999,
     disableHostCheck: true,
@@ -27,7 +27,7 @@ module.exports = {
     }
   },
   build: {
-    NODE_ENV: '"production"',
+    NODE_ENV: 'production',
     devtool: '#source-map',
     assetsPublicPath: 'https://iget365.yigefanqie.com/assets/',
     html: {

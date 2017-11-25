@@ -5,7 +5,7 @@
     </div>
     <el-form :model="form" status-icon :rules="rule" ref="form" label-width="80px" size="mini">
       <el-form-item label="内容" prop="content">
-        <el-input type="textarea" v-model="form.content" auto-complete="off"></el-input>
+        <el-input type="textarea" :rows="12" v-model="form.content" auto-complete="off"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm" v-loading.lock="loading">提交</el-button>

@@ -5,7 +5,7 @@
     </div>
     <div class="detail-item">
       <label class="detail-item-title">内容：</label>
-      <p class="detail-item-content">{{ form.content }}</p>
+      <p class="detail-item-content" v-html="$options.filters.breakline(form.content)"></p>
     </div>
     <div class="detail-item">
       <label class="detail-item-title">创建日期：</label>

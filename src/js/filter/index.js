@@ -25,5 +25,8 @@ export default {
     }
 
     return content
+  },
+  breakline (val = '') {
+    return val.replace(/\r\n/g, '<br>').replace(/\n/g, '<br>').replace(/\s/g, ' ')
   }
 }

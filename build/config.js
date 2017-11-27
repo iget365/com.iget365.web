@@ -9,7 +9,7 @@ module.exports = {
     autoOpenBrowser: false,
     proxy: {
       '/api': {
-        target: '//127.0.0.1',
+        target: 'https://127.0.0.1',
         // ignorePath: true,
         prependPath: true,
         changeOrigin: true,
@@ -17,7 +17,7 @@ module.exports = {
       }
     },
     devtool: 'eval-source-map',
-    assetsPublicPath: '',
+    assetsPublicPath: '/',
     html: {
       minify: {
         removeComments: false,

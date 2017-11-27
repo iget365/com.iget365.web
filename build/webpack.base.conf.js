@@ -2,6 +2,7 @@
 const path = require('path')
 const config = require('./config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -86,7 +87,7 @@ module.exports = {
       loader: 'url-loader',
       options: {
         limit: 3000,
-        name: 'css/font/[name].[hash:8].[ext]'
+        name: 'font/[name].[hash:8].[ext]'
       }
     }]
   },

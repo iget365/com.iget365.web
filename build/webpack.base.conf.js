@@ -6,6 +6,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 const EslintFriendlyFormatter = require('eslint-friendly-formatter')
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -16,6 +17,7 @@ function resolve (dirOrPath) {
 module.exports = {
   context: resolve('/'),
   entry: {
+    vendor: ['vue', 'vue-router', 'axios'],
     login: resolve('src/js/login.js'),
     index: resolve('src/js/index.js')
   },
@@ -95,13 +97,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'login.html',
       template: resolve('src/login.html'),
-      chunks: ['login'],
+      chunks: ['vendor', 'login'],
       minify: isProd ? config.build.html.minify : config.dev.html.minify
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: resolve('src/index.html'),
-      chunks: ['index'],
+      chunks: ['vendor', 'index'],
       minify: isProd ? config.build.html.minify : config.dev.html.minify
     }),
     new HtmlWebpackPlugin({
@@ -117,6 +119,10 @@ module.exports = {
       minify: isProd ? config.build.html.minify : config.dev.html.minify
     }),
     new ExtractTextPlugin('css/' + (isProd ? '[name].[contenthash:8].css' : '[name].css')),
+    new CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    }),
     new CopyWebpackPlugin([{
       from: resolve('src/favicon.ico')
     }])

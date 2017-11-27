@@ -3,7 +3,6 @@ import router from './router/index'
 import Index from './view/Index'
 import ajax from './common/ajax'
 import filter from './filter'
-import '../font/css/font-awesome.min.css'
 import '../css/reset.css'
 import '../css/lib/element-ui.css'
 import {

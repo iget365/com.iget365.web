@@ -86,7 +86,7 @@ module.exports = {
       }
     }, {
       test: /\.(woff2?|eot|ttf|otf)(\?.+)?$/,
-      loader: 'url-loader',
+      loader: 'file-loader',
       options: {
         name: 'font/[name].[hash:8].[ext]'
       }

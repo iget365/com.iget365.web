@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+let expired = false
+
 async function ajax (method, url, data, header) {
   const token = localStorage.getItem('iget365token')
   let headers = null
@@ -13,7 +15,8 @@ async function ajax (method, url, data, header) {
   headers = headers || {}
 
   if (url.indexOf('/public') === -1) {
-    if (!token) {
+    if (!token && !expired) {
+      expired = true
       alert('token已经失效，请先登录')
       location.href = './login.html'
       return

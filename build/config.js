@@ -29,7 +29,7 @@ module.exports = {
   build: {
     NODE_ENV: 'production',
     devtool: '#source-map',
-    assetsPublicPath: '//www.iget365..com/assets/',
+    assetsPublicPath: '//www.iget365.com/assets/',
     html: {
       minify: {
         removeComments: true,
